@@ -1,0 +1,32 @@
+<?xml version="1.0" ?> 
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="HelloWorld" default="compress">
+	<ivy:settings file="./ivysettings.xml" />
+	
+  	<target name="resolve">
+	    <ivy:retrieve/>
+	</target>    
+  
+	<target name="clean">
+			<delete dir="build" />
+			<delete dir="dist" />
+			
+		</target>
+	
+
+	  	
+	<target name="init" depends="resolve">
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="build/classes" />
+	</target>
+	
+	<target name="jar" depends="compile">
+	        <jar destfile="dist/HelloWorld.jar" basedir="build/classes" />
+	</target>
+	
+	<target name="clean-build" depends="clean,jar" />
+	
+</project>

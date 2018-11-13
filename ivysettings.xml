@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivysettings>
+  <settings defaultResolver="main" />
+  <credentials host="localhost" realm="Artifactory Realm" username="admin" passwd="password" />
+  <resolvers>
+    <chain name="main">
+      <ibiblio name="public" m2compatible="true" root="http://10.80.10.103:8081/artifactory/remote-repos" />
+    </chain>
+  </resolvers>
+</ivysettings>
+
